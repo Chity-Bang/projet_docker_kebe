@@ -1,0 +1,28 @@
+services:
+  api:
+    image: pozos-api:1
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./simple_api/student_age.json:/data/student_age.json
+    networks:
+      - pozos-network
+
+  website-pozos:
+    image: php:apache
+    environment:
+      - USERNAME=toto
+      - PASSWORD=python
+    volumes:
+      - ./website:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - pozos-network
+
+networks:
+  pozos-network:
+    driver: bridge
+
