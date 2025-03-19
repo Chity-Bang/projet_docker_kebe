@@ -1,5 +1,5 @@
 FROM python:3.8-buster
-LABEL maintainer="chity" email="chitybang2000@gmail.com"
+LABEL maintainer="xxxxxx" email="xxxxxx.com"
 ADD student_age.py /
 RUN apt update -y && apt install python-dev python3-dev libsasl2-dev python-dev libldap2-dev libssl-dev -y
 ADD requirements.txt /
